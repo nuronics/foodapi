@@ -20,7 +20,8 @@ def webhook():
     print(json.dumps(res, indent=4))
     r = flask.make_response(res)
     r.headers['Content-Type'] = 'application/json'
-    print("result r"r)
+    print("result r")
+    print(r)
     return r
 def processRequest(req):
     result = req.get("result")
