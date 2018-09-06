@@ -55,7 +55,7 @@ def processRequest(req):
     for x in range(len(json_data.get('restaurants'))):
         dict[json_data.get('restaurants')[x].get('restaurant').get('name')] = json_data.get('restaurants')[x].get('restaurant').get('order_url')
     
-    speech=json.dumps(dict)
+    speech=json.dumps(dict.items())
 
     return {
         "speech": speech,
