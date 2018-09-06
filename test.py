@@ -40,11 +40,13 @@ def processRequest(req):
     json_data=requests.get(search_url).json()
     print(search_url)
     #print(json.dumps(json_data, indent = 4))
-    dict = {}
+    namedict=[]
+    urldict=[]
     for x in range(len(json_data.get('restaurants'))):
-        dict[json_data.get('restaurants')[x].get('restaurant').get('name')] = json_data.get('restaurants')[x].get('restaurant').get('order_url')
+        namedict[x]=json_data.get('restaurants')[x].get('restaurant').get('name')
+        urldict[x]= json_data.get('restaurants')[x].get('restaurant').get('order_url')
     
-    speech=str(dict.items())
+    speech=str(namedict)+str(urldict)
     
     print(speech)
     print(type(speech))
