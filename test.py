@@ -30,7 +30,7 @@ def processRequest(req):
     #url to fetch the details of the client location
     location_url=url+'locations?query='+u_loc+apikey
     json_data = requests.get(location_url).json()
-    print(json.dumps(json_data,indent =4))
+    
     entity_id=json_data.get('location_suggestions')[0].get('entity_id')
     entity_type=json_data.get('location_suggestions')[0].get('entity_type')
     city_id=json_data.get('location_suggestions')[0].get('city_id')
@@ -46,8 +46,7 @@ def processRequest(req):
     for x in range(len(json_data.get('restaurants'))):
         namedict.append(json_data.get('restaurants')[x].get('restaurant').get('name'))
         urldict.append(json_data.get('restaurants')[x].get('restaurant').get('order_url'))
-    print(namedict)
-    print(urldict)
+    
     speech=str(namedict)+str(urldict)
     
     print(speech)
