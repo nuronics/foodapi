@@ -54,9 +54,9 @@ def processRequest(req):
     print(type(speech))
 
     return {
-    "speech": speech,
-    "displayText": speech,
-    "source":"Zomato top restaurants"
+        "speech": speech,
+        "displayText": speech,
+        "source":"Zomato top restaurants"
     }
 
 
