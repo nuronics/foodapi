@@ -3,9 +3,9 @@ import requests
 import json
 import os
 import googlemaps
-from geolocation.main import GoogleMaps
-from geolocation.distance_matrix.client import DistanceMatrixApiClient
-from googlemaps import exceptions
+#from geolocation.main import GoogleMaps
+#from geolocation.distance_matrix.client import DistanceMatrixApiClient
+#from googlemaps import exceptions
 
 app = flask.Flask(__name__)
 
