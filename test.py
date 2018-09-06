@@ -46,6 +46,7 @@ def processRequest(req):
     speech=json.dumps(dict,indent=4)
     print (json.dumps(dict,indent=4))
     print(speech)
+    print(type(speech))
 
     return {
     "speech": speech,
