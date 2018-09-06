@@ -51,9 +51,11 @@ def processRequest(req):
         urldict.append(json_data.get('restaurants')[x].get('restaurant').get('order_url'))'''
     
     #speech=str(namedict)+str(urldict)
-    speech=str(json_data.get('restaurants')[0].get('restaurant').get('name'))+str(json_data.get('restaurants')[0].get('restaurant').get('order_url'))
-    print(speech)
-    print(type(speech))
+    dict = {}
+    for x in range(len(json_data.get('restaurants'))):
+        dict[json_data.get('restaurants')[x].get('restaurant').get('name')] = json_data.get('restaurants')[x].get('restaurant').get('order_url')
+    
+    speech=dict
 
     return {
         "speech": speech,
