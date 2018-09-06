@@ -47,8 +47,8 @@ def processRequest(req):
 
 
     return {
-    "speech": dict,
-    "displayText": dict,
+    "speech": json.dumps(dict,indent=4)
+    "displayText": json.dumps(dict,indent=4),
     "source":"Zomato top restaurants"
     }
 
