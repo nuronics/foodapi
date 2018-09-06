@@ -16,6 +16,8 @@ apikey='&apikey=c5062d18e16b9bb9d857391bb32bb52f'
 def webhook():
     req = flask.request.get_json()
     res = processRequest(req)
+    print("response :")
+    print(json.dumps(res, indent=4))
     r = flask.make_response(res)
     r.headers['Content-Type'] = 'application/json'
     return r
