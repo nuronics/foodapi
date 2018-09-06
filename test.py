@@ -45,7 +45,8 @@ def processRequest(req):
     for x in range(len(json_data.get('restaurants'))):
         namedict[x]=json_data.get('restaurants')[x].get('restaurant').get('name')
         urldict[x]= json_data.get('restaurants')[x].get('restaurant').get('order_url')
-    
+    print(namedict)
+    print(urldict)
     speech=str(namedict)+str(urldict)
     
     print(speech)
