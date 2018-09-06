@@ -40,7 +40,7 @@ def processRequest(req):
     json_data=requests.get(search_url).json()
     print(search_url)
     #print(json.dumps(json_data, indent = 4))
-    dict = []
+    dict = {}
     for x in range(len(json_data.get('restaurants'))):
         dict[json_data.get('restaurants')[x].get('restaurant').get('name')] = json_data.get('restaurants')[x].get('restaurant').get('order_url')
     
