@@ -43,12 +43,13 @@ def processRequest(req):
     dict = {}
     for x in range(len(json_data.get('restaurants'))):
         dict[json_data.get('restaurants')[x].get('restaurant').get('name')] = json_data.get('restaurants')[x].get('restaurant').get('order_url')
+    speech=json.dumps(dict,indent=4)
     print (json.dumps(dict,indent=4))
-
+    print(speech)
 
     return {
-    "speech": json.dumps(dict),
-    "displayText": json.dumps(dict),
+    "speech": speech,
+    "displayText": speech,
     "source":"Zomato top restaurants"
     }
 
@@ -57,17 +58,3 @@ if __name__ == '__main__':
     port = int(os.getenv('PORT',5000))
     print("Starting app %d" % port)
     app.run(debug=False, port=port, host='0.0.0.0')
-
-
-'''
-q='Chai Pani Cafe,Jubilee Hills,Hyderabad,Telangana'
-
-
-
-#print(json_data)
-
-
-
-getCuisines =url+'cuisines?city_id='+str(city_id)+apikey
-
-json_data=requests.get(getCuisines).json()'''
