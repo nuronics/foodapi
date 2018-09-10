@@ -1,4 +1,4 @@
 flask==1.0.2
 requests==2.19.1
 googlemaps==3.0.2
-dialogflow_v2==2.0.0
+dialogflow_v2==0.5.1
