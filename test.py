@@ -3,6 +3,7 @@ import requests
 import json
 import os
 import googlemaps
+import dialogflow
 #from geolocation.main import GoogleMaps
 #from geolocation.distance_matrix.client import DistanceMatrixApiClient
 #from googlemaps import exceptions
@@ -25,6 +26,8 @@ def webhook():
     return r
 def processRequest(req):
     result = req.get("result")
+    if result.get("action")== "AskLocation.AskLocation-yes":
+        loc=getLocation()
     parameters = result.get("parameters")
     u_loc = str(parameters.get("landmark"))
     u_type = str(parameters.get("type"))
