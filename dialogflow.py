@@ -32,7 +32,7 @@ def processRequest(req):
     "source":"Zomato top restaurants"
   }
 def getLocation(app):
-  const loc = app.SupportedPermissions.DEVICE_PRECISE_LOCATION
+  loc = app.SupportedPermissions.DEVICE_PRECISE_LOCATION
   app.askForPermissions('',[loc])
   return
 
