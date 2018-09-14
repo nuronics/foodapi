@@ -69,7 +69,7 @@ def processRequest(req):
 
 def makeresult(resultstr,appendstr):
     
-    return resultstr+'\n'+str(appendstr)
+    return resultstr+'<br>'+str(appendstr)
 
 '''def fetchcuisines(u_loc):
     cusineurl = url+'cusines?'+u_loc+apikey   
