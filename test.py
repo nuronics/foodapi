@@ -65,8 +65,11 @@ def processRequest(req):
         "displayText": speech,
         "source":"Zomato top restaurants"
     }
+
 def makereslt(resultstr,appendstr):
+    
     return resultstr+'\n'+str(appendstr)
+
 '''def fetchcuisines(u_loc):
     cusineurl = url+'cusines?'+u_loc+apikey   
     json_data = requests.get(cusineurl).json()
