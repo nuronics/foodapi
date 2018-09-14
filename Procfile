@@ -1,1 +1,1 @@
-web: python dialogflow.py
+web: python test.py
