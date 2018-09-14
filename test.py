@@ -45,6 +45,7 @@ def processRequest(req):
     search_url=url+'search?radius=3000&sort=cost&count=5&entity_id='+str(entity_id)+'&entity_type='+str(entity_type)+'&lat='+str(lat)+'&lon='+str(longi)+'&cuisines=7'+apikey
     json_data=requests.get(search_url).json()
     print(search_url)
+    print(json_data)
     namedict=[]
     urldict=[]
     resultstr=''
@@ -59,7 +60,7 @@ def processRequest(req):
         dict[json_data.get('restaurants')[x].get('restaurant').get('name')] = json_data.get('restaurants')[x].get('restaurant').get('order_url')
     
     speech=resultstr
-
+    print(speech)
     return {
         "speech": speech,
         "displayText": speech,
