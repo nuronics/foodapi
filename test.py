@@ -42,30 +42,35 @@ def processRequest(req):
     city_id=json_data.get('location_suggestions')[0].get('city_id')
     lat=json_data.get('location_suggestions')[0].get('latitude')
     longi=json_data.get('location_suggestions')[0].get('longitude')
-    search_url=url+'search?radius=3000&sort=cost&count=10&entity_id='+str(entity_id)+'&entity_type='+str(entity_type)+'&lat='+str(lat)+'&lon='+str(longi)+'&cuisines=7'+apikey
+    search_url=url+'search?radius=3000&sort=cost&count=5&entity_id='+str(entity_id)+'&entity_type='+str(entity_type)+'&lat='+str(lat)+'&lon='+str(longi)+'&cuisines=7'+apikey
     json_data=requests.get(search_url).json()
     print(search_url)
-    #print(json.dumps(json_data, indent = 4))
-    #print(json.dumps(json_data,indent=4))
-    '''namedict=[]
+    namedict=[]
     urldict=[]
+    resultstr=''
     for x in range(len(json_data.get('restaurants'))):
         namedict.append(json_data.get('restaurants')[x].get('restaurant').get('name'))
-        urldict.append(json_data.get('restaurants')[x].get('restaurant').get('order_url'))'''
+        urldict.append(json_data.get('restaurants')[x].get('restaurant').get('order_url'))
+        resultstr = makeresult(resultstr,json_data.get('restaurants')[x].get('restaurant').get('name'))
     
     #speech=str(namedict)+str(urldict)
     dict = {}
     for x in range(len(json_data.get('restaurants'))):
         dict[json_data.get('restaurants')[x].get('restaurant').get('name')] = json_data.get('restaurants')[x].get('restaurant').get('order_url')
     
-    speech=str(dict.items())
+    speech=resultstr
 
     return {
         "speech": speech,
         "displayText": speech,
         "source":"Zomato top restaurants"
     }
-
+def makereslt(resultstr,appendstr):
+    return resultstr+'\n'+str(appendstr)
+'''def fetchcuisines(u_loc):
+    cusineurl = url+'cusines?'+u_loc+apikey   
+    json_data = requests.get(cusineurl).json()
+    cuisines = json_data.get('cusines')'''
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT',5000))
