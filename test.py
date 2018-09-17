@@ -59,7 +59,7 @@ def processRequest(req):
     for x in range(len(json_data.get('restaurants'))):
         dict[json_data.get('restaurants')[x].get('restaurant').get('name')] = json_data.get('restaurants')[x].get('restaurant').get('order_url')
     
-    speech=resultstr
+    speech="These are the available Best restaurants in your area, which serve the "+u_cuisine+"\n"+resultstr+"\n Choose one restaurant of your choice."
     print(speech)
     return {
         "speech": speech,
@@ -69,7 +69,7 @@ def processRequest(req):
 
 def makeresult(resultstr,appendstr):
     
-    return resultstr+'<br>'+str(appendstr)
+    return resultstr+"\n"+str(appendstr)
 
 '''def fetchcuisines(u_loc):
     cusineurl = url+'cusines?'+u_loc+apikey   
