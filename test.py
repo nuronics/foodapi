@@ -72,7 +72,8 @@ def processRequest(req):
     }
 
 def geolocationn(u_loc):
-    if u_loc == 'none':
+    
+    if u_loc == '':
         address = "chaipani jubliee hills checkpost Hyderabad"
     else:
         address = u_loc
