@@ -32,8 +32,8 @@ def processRequest(req):
     parameters = result.get("parameters")
 
     landm = str(parameters.get("landmark"))
-    if u_loc == landmark:
-        continue
+    if u_loc == landm:
+        
     else:
         u_loc = geolocationn(landm)
 
