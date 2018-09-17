@@ -42,7 +42,7 @@ def processRequest(req):
     city_id=json_data.get('location_suggestions')[0].get('city_id')
     lat=json_data.get('location_suggestions')[0].get('latitude')
     longi=json_data.get('location_suggestions')[0].get('longitude')
-    search_url=url+'search?radius=3000&sort=cost&count=5&entity_id='+str(entity_id)+'&entity_type='+str(entity_type)+'&lat='+str(lat)+'&lon='+str(longi)+'&cuisines=7'+apikey
+    search_url=url+'search?entity_id='+str(entity_id)+'&entity_type='+str(entity_type)+'&lat='+str(lat)+'&lon='+str(longi)+'&cuisines=7&radius=3000&sort=cost&count=5'+apikey
     json_data=requests.get(search_url).json()
     print(search_url)
     print(json_data)
