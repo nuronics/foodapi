@@ -7,7 +7,6 @@ import googlemaps
 from geolocation.main import GoogleMaps
 from geolocation.distance_matrix.client import DistanceMatrixApiClient
 from googlemaps import exceptions
-uloc =''
 
 app = flask.Flask(__name__)
 
@@ -25,6 +24,9 @@ def webhook():
     print("result r")
     print(r)
     return r
+
+uloc =''
+
 def processRequest(req):
     result = req.get("result")
     if result.get("action")== "AskLocation.AskLocation-yes":
