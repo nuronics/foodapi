@@ -31,13 +31,9 @@ def processRequest(req):
     if result.get("action")== "AskLocation.AskLocation-yes":
         loc=getLocation()
     parameters = result.get("parameters")
-    uloc =''
+    
     landm = str(parameters.get("landmark"))
-    if u_loc == landm:
-        print()
-    else:
-        u_loc = geolocationn(landm)
-
+    u_loc = geolocationn(landm)
     u_type = str(parameters.get("type"))
     u_cuisine = str(parameters.get("cuisines"))
     u_Collections = str(parameters.get("Collections"))
