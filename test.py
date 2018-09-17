@@ -25,17 +25,16 @@ def webhook():
     print(r)
     return r
 
-uloc =''
 
 def processRequest(req):
     result = req.get("result")
     if result.get("action")== "AskLocation.AskLocation-yes":
         loc=getLocation()
     parameters = result.get("parameters")
-
+    uloc =''
     landm = str(parameters.get("landmark"))
     if u_loc == landm:
-        print('')
+        print()
     else:
         u_loc = geolocationn(landm)
 
