@@ -49,7 +49,7 @@ def processRequest(req):
     search_url=url+'search?entity_id='+str(entity_id)+'&entity_type='+str(entity_type)+'&lat='+str(lat)+'&lon='+str(longi)+'&cuisines=7&radius=3000&sort=cost&count=5'+apikey
     json_data=requests.get(search_url).json()
     print(search_url)
-    print(json_data)
+    
     namedict=[]
     urldict=[]
     resultstr=''
@@ -87,16 +87,10 @@ def geolocationn(u_loc):
 
         my_location = location.first()
 
-        print(my_location.city)
-        print(my_location.route)
-        print(my_location.street_number)
-        print(my_location.postal_code)
+       
 
         for administrative_area in my_location.administrative_area:
             print("%s: %s" % (administrative_area.area_type, administrative_area.name))
-
-        print(my_location.country)
-        print(my_location.country_shortcut)
 
         print(my_location.formatted_address)
 
