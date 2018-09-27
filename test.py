@@ -28,8 +28,8 @@ def webhook():
 
 def processRequest(req):
     result = req.get("result")
-    if result.get("action")== "AskLocation.AskLocation-yes":
-        loc=getLocation()
+    #if result.get("action")== "AskLocation.AskLocation-yes":
+    #   loc=getLocation()
     parameters = result.get("parameters")
     
     landm = str(parameters.get("landmark"))
@@ -80,7 +80,7 @@ def geolocationn(u_loc):
     else:
         address = u_loc
         print (address)
-    google_maps = GoogleMaps(api_key='AIzaSyDpUu4Ks4VMyW02wV_rp2sWS2jFlzAM09M')
+    google_maps = GoogleMaps(api_key='AIzaSyCfHC9jA07EFo-hTYkHR1szXOvGD4knDTI')
     if googlemaps != None:
 
         location = google_maps.search(location=address)
