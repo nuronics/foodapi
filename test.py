@@ -3,10 +3,10 @@ import requests
 import json
 import os
 import googlemaps
-#import dialogflow_v2
+'''import dialogflow_v2
 from geolocation.main import GoogleMaps
 from geolocation.distance_matrix.client import DistanceMatrixApiClient
-from googlemaps import exceptions
+from googlemaps import exceptions'''
 
 app = flask.Flask(__name__)
 
@@ -38,7 +38,7 @@ def processRequest(req):
     u_cuisine = str(parameters.get("cuisines"))
     u_Collections = str(parameters.get("Collections"))
     query = str(parameters.get("item"))
-    longi = str(parameters.get("longi))
+    longi = str(parameters.get("longi"))
     lat = str(parameters.get("lat"))
     
     #url to fetch the details of the client location
@@ -74,7 +74,7 @@ def processRequest(req):
         "source":"Zomato top restaurants"
     }
 
-def geolocationn(u_loc):
+'''def geolocationn(u_loc):
     
     if u_loc == '':
         address = "chaipani jubliee hills checkpost Hyderabad"
@@ -100,7 +100,7 @@ def geolocationn(u_loc):
         print(my_location.lat)
         print(my_location.lng)
 
-    return my_location.formatted_address
+    return my_location.formatted_address'''
 
 
 def makeresult(resultstr,appendstr):
