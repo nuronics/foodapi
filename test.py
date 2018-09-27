@@ -38,6 +38,8 @@ def processRequest(req):
     u_cuisine = str(parameters.get("cuisines"))
     u_Collections = str(parameters.get("Collections"))
     query = str(parameters.get("item"))
+    lat = str(parameters.get("lat"))
+    longi = str(parameters.get("longi))
     #url to fetch the details of the client location
     location_url=url+'locations?query='+u_loc+apikey
     json_data = requests.get(location_url).json()
@@ -45,8 +47,6 @@ def processRequest(req):
     entity_id=json_data.get('location_suggestions')[0].get('entity_id')
     entity_type=json_data.get('location_suggestions')[0].get('entity_type')
     city_id=json_data.get('location_suggestions')[0].get('city_id')
-    lat=json_data.get('location_suggestions')[0].get('latitude')
-    longi=json_data.get('location_suggestions')[0].get('longitude')
     search_url=url+'search?entity_id='+str(entity_id)+'&entity_type='+str(entity_type)+'&q='+str(query)+'&lat='+str(lat)+'&lon='+str(longi)+'&radius=3000&sort=real_distance&order=asc&count=5'+apikey
 
     json_data=requests.get(search_url).json()
