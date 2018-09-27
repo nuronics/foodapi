@@ -47,7 +47,8 @@ def processRequest(req):
     city_id=json_data.get('location_suggestions')[0].get('city_id')
     lat=json_data.get('location_suggestions')[0].get('latitude')
     longi=json_data.get('location_suggestions')[0].get('longitude')
-    search_url=url+'search?q='+str(query)+'&entity_id='+str(entity_id)+'&entity_type='+str(entity_type)+'&lat='+str(lat)+'&lon='+str(longi)+&radius=3000&count=5'+apikey
+    search_url=url+'search?entity_id='+str(entity_id)+'&entity_type='+str(entity_type)+'&q='+str(query)+'&lat='+str(lat)+'&lon='+str(longi)+&radius=3000&sort=real_distance&order=asc&count=5'+apikey
+
     json_data=requests.get(search_url).json()
     print(search_url)
     
