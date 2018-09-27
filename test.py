@@ -32,8 +32,8 @@ def processRequest(req):
     #   loc=getLocation()
     parameters = result.get("parameters")
     
-    landm = str(parameters.get("landmark"))
-    u_loc = geolocationn(landm)
+    #landm = str(parameters.get("landmark"))
+    #u_loc = geolocationn(landm)
     u_type = str(parameters.get("type"))
     u_cuisine = str(parameters.get("cuisines"))
     u_Collections = str(parameters.get("Collections"))
