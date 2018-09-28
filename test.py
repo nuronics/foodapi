@@ -53,6 +53,8 @@ def processRequest(req):
 
     json_data=requests.get(search_url).json()
     print(search_url)
+    print()
+    print(json_data)
     
     namedict=[]
     urldict=[]
