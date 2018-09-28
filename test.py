@@ -52,10 +52,7 @@ def processRequest(req):
     search_url=url+'search?q='+str(query)+'&lat='+str(lat)+'&lon='+str(longi)+'&radius=3000&sort=real_distance&order=asc&count=5'+apikey
 
     json_data=requests.get(search_url).json()
-    print(search_url)
-    print()
-    print(json_data)
-    
+    print(search_url)    
     namedict=[]
     urldict=[]
     resultstr=''
@@ -68,8 +65,10 @@ def processRequest(req):
     dict = {}
     for x in range(len(json_data.get('restaurants'))):
         dict[json_data.get('restaurants')[x].get('restaurant').get('name')] = json_data.get('restaurants')[x].get('restaurant').get('order_url')
-
-    speech="These are the available Best restaurants in your area, which serve " +query+"\n"+resultstr+"\n Choose one restaurant of your choice."
+    if not resultstr:
+        speech="Sorry no results found......"
+    else:
+        speech="These are the available Best restaurants in your area, which serve " +query+"\n"+resultstr+"\n Choose one restaurant of your choice."
     print(speech)
     return {
         "speech": speech,
@@ -109,11 +108,6 @@ def processRequest(req):
 def makeresult(resultstr,appendstr):
 
     return resultstr+"\n"+str(appendstr)
-
-'''def fetchcuisines(u_loc):
-    cusineurl = url+'cusines?'+u_loc+apikey
-    json_data = requests.get(cusineurl).json()
-    cuisines = json_data.get('cusines')'''
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT',5000))
