@@ -39,7 +39,7 @@ def processRequest(req):
     u_Collections = str(parameters.get("Collections"))
     query = str(parameters.get("item"))
     longi = str(parameters.get("longi"))
-    lat = str(parameters.get("lat")[0])
+    lat = str(parameters.get("lat"))
     
     #url to fetch the details of the client location
    # location_url=url+'locations?query='+u_loc+apikey
