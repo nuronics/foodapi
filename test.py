@@ -3,6 +3,7 @@ import requests
 import json
 import os
 import googlemaps
+import random 
 '''import dialogflow_v2
 from geolocation.main import GoogleMaps
 from geolocation.distance_matrix.client import DistanceMatrixApiClient
