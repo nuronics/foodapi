@@ -60,7 +60,7 @@ def processRequest(req):
     for x in range(len(json_data.get('restaurants'))):
         namedict.append(json_data.get('restaurants')[x].get('restaurant').get('name'))
         urldict.append(json_data.get('restaurants')[x].get('restaurant').get('order_url'))
-        resultstr = makeresult(resultstr,json_data.get('restaurants')[x].get('restaurant').get('name')+" from here your order may cost you approximately "+str(random.randint(1, 10)*99)+" ₹")
+        resultstr = makeresult(resultstr,json_data.get('restaurants')[x].get('restaurant').get('name')+" cost's you approximately "+str(random.randint(1, 10)*99)+" ₹")
 
     #speech=str(namedict)+str(urldict)
     dict = {}
