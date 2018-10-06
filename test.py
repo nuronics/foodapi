@@ -17,6 +17,7 @@ apikey='&apikey=c5062d18e16b9bb9d857391bb32bb52f'
 @app.route('/webhook', methods=['POST'])
 def webhook():
     req = flask.request.get_json()
+    print(req)
     res = processRequest(req)
     print("response :")
     print(res)
